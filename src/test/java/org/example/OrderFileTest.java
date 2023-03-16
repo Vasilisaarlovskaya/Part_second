@@ -2,12 +2,12 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
 import java.io.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class GoodsTest {
-
+class OrderFileTest {
     @Test
     void creatFileOrder() {
         try {
