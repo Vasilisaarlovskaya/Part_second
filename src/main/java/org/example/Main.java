@@ -19,34 +19,37 @@ public class Main {
     private static final Logger logger = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) {
-
-        System.out.println("Добро пожаловать, напишите наименование товара");
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
-            logger.info("Начало создания заказа");
-            Goods goods = new Goods();
-            goods.setName(br.readLine());
-            logger.info("Добавление наименования товара");
-            System.out.println("Введите количество товара");
-            int amount = Integer.parseInt(br.readLine());
-            if (amount <= 0) {
-                logger.warn("Количество товара отрицательное число или равно 0");
-            } else {
+            System.out.println("Добро пожаловать. Хотите оформить заказ?");
+            while (br.readLine().equals("да")) {
+                System.out.println("Напишите наименование товара");
+                logger.info("Начало создания заказа");
+                Goods goods = new Goods();
+                goods.setName(br.readLine());
+                logger.info("Добавление наименования товара");
+                System.out.println("Введите количество товара");
+                int amount;
+                while ((amount = Integer.parseInt(br.readLine())) <= 0) {
+                    System.out.println("Количество товара отрицательное число или равно 0. Повторите ввод");
+                    logger.warn("Количество товара отрицательное число или равно 0");
+                }
                 goods.setAmount(amount);
                 logger.info("Добавление количества товара");
-            }
                 System.out.println("Введите стоимость товара");
-                double quantity = Double.parseDouble(br.readLine());
-                if (quantity <= 0) {
+                double quantity;
+                while ((quantity = Double.parseDouble(br.readLine())) <= 0) {
+                    System.out.println("Стоимость товара отрицательное число или равно 0. Повторите ввод");
                     logger.warn("Стоимость товара отрицательное число или равно 0");
-                } else {
-                    logger.info("Добавление стоимости товара");
-                    goods.setQuantity(quantity);
-                    Goods.creatFileOrder(goods.getName(), goods.getQuantity(), goods.getAmount());
                 }
-        } catch (IOException e) {
-            e.printStackTrace();
-            logger.error("Возникла ошибка при создании заказа");
-        }
-
+                logger.info("Добавление стоимости товара");
+                goods.setQuantity(quantity);
+                OrderFile.creatFileOrder(goods.getName(), goods.getQuantity(), goods.getAmount());
+                System.out.println("Хотите оформить еще один заказ?");
+            }
+        } catch(IOException e){
+                e.printStackTrace();
+                logger.error("Возникла ошибка при создании заказа");
+            }
+        System.out.println("Вы оформили заказ(ы)");
     }
 }
