@@ -22,8 +22,8 @@ public class Main {
 
         System.out.println("Добро пожаловать, напишите наименование товара");
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
-            Goods goods = new Goods();
             logger.info("Начало создания заказа");
+            Goods goods = new Goods();
             goods.setName(br.readLine());
             logger.info("Добавление наименования товара");
             System.out.println("Введите количество товара");
@@ -31,20 +31,22 @@ public class Main {
             if (amount <= 0) {
                 logger.warn("Количество товара отрицательное число или равно 0");
             } else {
-                goods.setQuantity(amount);
+                goods.setAmount(amount);
                 logger.info("Добавление количества товара");
             }
-            System.out.println("Введите стоимость товара");
-            double quantity = Double.parseDouble(br.readLine());
-            if (quantity <= 0) {
-                logger.warn("Стоимость товара отрицательное число или равно 0");
-            } else {
-                goods.setAmount(quantity);
-                logger.info("Добавление стоимости товара");
-            }
+                System.out.println("Введите стоимость товара");
+                double quantity = Double.parseDouble(br.readLine());
+                if (quantity <= 0) {
+                    logger.warn("Стоимость товара отрицательное число или равно 0");
+                } else {
+                    logger.info("Добавление стоимости товара");
+                    goods.setQuantity(quantity);
+                    Goods.creatFileOrder(goods.getName(), goods.getQuantity(), goods.getAmount());
+                }
         } catch (IOException e) {
             e.printStackTrace();
             logger.error("Возникла ошибка при создании заказа");
         }
+
     }
 }
