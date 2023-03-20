@@ -43,7 +43,7 @@ public class Main {
                 }
                 logger.info("Добавление стоимости товара");
                 goods.setQuantity(quantity);
-                OrderFile.creatFileOrder(goods.getName(), goods.getQuantity(), goods.getAmount());
+                OrderFile.creatFileOrder(goods);
                 System.out.println("Хотите оформить еще один заказ?");
             }
         } catch(IOException e){
