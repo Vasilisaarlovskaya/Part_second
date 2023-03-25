@@ -16,8 +16,8 @@ insert into author (authorName, authorSurname) values
 insert into book (bookTitle, bookAuthorId, bookPages) values
     ('Alive corpse', 3, 416), ('Player', 1, 224), ('About the dangers of tobacco', 2, 38);
 select authorName, authorSurname, bookTitle, bookPages
-    from author inner join book where authorId = bookAuthorId;
+    from author inner join book on authorId = bookAuthorId;
 select * from book where bookPages > 300;
 select authorName, authorSurname, bookTitle, bookPages from author
-    inner join book where (authorId = bookAuthorId) and (bookPages > 300);
+    inner join book on (authorId = bookAuthorId) and (bookPages > 300);
 
