@@ -3,9 +3,9 @@ package org.example;
 import java.sql.*;
 
 public class MethodsForStudents {
-    JDBS jdbs = new JDBS();
 
     public void selectStudents() throws SQLException {
+        JDBS jdbs = new JDBS();
         ResultSet resultSet = null;
         Statement statement = null;
         Connection connection = null;
@@ -32,6 +32,7 @@ public class MethodsForStudents {
     }
 
     public void selectStudentsWithCity() throws SQLException {
+        JDBS jdbs = new JDBS();
         ResultSet resultSet = null;
         Statement statement = null;
         Connection connection = null;
@@ -62,6 +63,7 @@ public class MethodsForStudents {
     }
 
     public void addStudents(String nameStudent, String genderStudent, String educationStudent, String jobStudent, int cityStd) throws SQLException {
+        JDBS jdbs = new JDBS();
         Connection connection = null;
         PreparedStatement prepareStatement = null;
         try {
@@ -79,6 +81,7 @@ public class MethodsForStudents {
     }
 
     public void addCity(String name) throws SQLException {
+        JDBS jdbs = new JDBS();
         PreparedStatement prepareStatement = null;
         Connection connection = null;
         try {
@@ -94,6 +97,7 @@ public class MethodsForStudents {
     }
 
     public void dropStudents(int id) throws SQLException {
+        JDBS jdbs = new JDBS();
         PreparedStatement prepareStatement = null;
         Connection connection = null;
         try {
@@ -110,6 +114,7 @@ public class MethodsForStudents {
     }
 
     public void dropCity(String nameCity) throws SQLException {
+        JDBS jdbs = new JDBS();
         PreparedStatement prepareStatement = null;
         Connection connection = null;
         try {
