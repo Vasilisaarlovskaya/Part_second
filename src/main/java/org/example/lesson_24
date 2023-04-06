@@ -18,6 +18,5 @@ insert into book (bookTitle, bookAuthorId, bookPages) values
 select authorName, authorSurname, bookTitle, bookPages
     from author inner join book on authorId = bookAuthorId;
 select * from book where bookPages > 300;
-select authorName, authorSurname, bookTitle, bookPages from author
-    inner join book on (authorId = bookAuthorId) and (bookPages > 300);
+select authorName, authorSurname from author join book on authorId = bookAuthorId where bookPages > 300;
 
