@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h1> Химические элементы </h1>
+<hr>
+<table>
+<thead>
+<tr>
+<th>Номер</th> <th>Название</th> <th>Символ</th> <th>Год</th><th>Статья</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 1</td>
+<td> <a href="https://ru.wikipedia.org/wiki/Водород">Водород </a></td>
+<td> <strong> H </strong> </td>
+<td> 1766 </td>
+<td> <a href = "https://upload.wikimedia.org/wikipedia/commons/8/83/Hydrogen_discharge_tube.jpg"> <img src="C:\Галерея\Art\art.png" width="53" height="32"> </a></td>
+</tr>
+ <tr>
+<td> 2</td>
+<td><a href="https://ru.wikipedia.org/wiki/Гелий">Гелий </a></td>
+<td> <strong> He </strong></td>
+<td>1895</td>
+<td> <a href = "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BB%D0%B8%D0%B9#/media/%D0%A4%D0%B0%D0%B9%D0%BB:Helium_discharge_tube.jpg"><img src="C:\Галерея\Art\art.png" width="53" height="32"> </a></td>
+</tr>
+<tr>
+<td> 3</td>
+<td><a href="https://ru.wikipedia.org/wiki/Бор_(элемент)">Бор </a></td>
+<td> <strong> B </strong></td>
+<td>1808</td>
+<td> <a href = "https://ru.wikipedia.org/wiki/%D0%91%D0%BE%D1%80_(%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82)#/media/%D0%A4%D0%B0%D0%B9%D0%BB:Boron_mNACTEC.jpg"><img src="C:\Галерея\Art\art.png" width="53" height="32"></a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p> <i> www.itmathrepetitor.ru</i></p>
+</body>
+</html>
