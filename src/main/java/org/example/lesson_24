@@ -1,0 +1,22 @@
+//Написать скрипт по созданию 2 таблиц: author(id,name,surname), book(id, title, authod_id, pages).
+//Заполнить таблицы данными(через скрипт)
+//Вывести данные о всех авторах и его книгах(использовать join).
+//Вывести все книги, где количество страниц больше 300.
+//
+//Доп.задание (со *)
+//Вывести авторов у которых есть хотя бы 1 книги, где количество страниц больше 300.
+
+create table author (authorId int not null auto_increment, authorName varchar (40) not null,
+    authorSurname varchar (50), primary key (authorId));
+create table book (bookId int not null auto_increment, bookTitle varchar (150),
+    bookAuthorId int not null, bookPages int, primary key (bookId),
+    foreign key (bookAuthorId) references author (authorId));
+insert into author (authorName, authorSurname) values
+    ('Fedor','Dostoyevsky'), ('Anton','Chekhov'), ('Lev','Tolstoy'), ('Adolescent', 1, 640);
+insert into book (bookTitle, bookAuthorId, bookPages) values
+    ('Alive corpse', 3, 416), ('Player', 1, 224), ('About the dangers of tobacco', 2, 38);
+select authorName, authorSurname, bookTitle, bookPages
+    from author inner join book on authorId = bookAuthorId;
+select * from book where bookPages > 300;
+select authorName, authorSurname from author join book on authorId = bookAuthorId where bookPages > 300;
+
